@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row pt-5">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Email</th>
+        <th scope="col">Тип операции</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of listRows; let i = index; trackBy: trackByFn">
+        <th scope="row">{{row.id}}</th>
+        <td>{{row.firstName}}</td>
+        <td>{{row.lastName}}</td>
+        <td>{{row.email}}</td>
+        <td>
+          <button type="button" class="btn btn-ultraviolet text-white" (click)="delete(row, i)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
