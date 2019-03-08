@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <form class="form-inline justify-content-center" [formGroup]="formPlayerNumber" (ngSubmit)="onSubmit()">
+        <div class="form-group mx-sm-2 mb-2">
+          <label class="sr-only">Введите число</label>
+          <input type="text" class="form-control" formControlName="number" [readOnly]="gameStart"
+                 [ngClass]="{ 'is-invalid': (formPlayerNumber.controls.number.dirty
+               || formPlayerNumber.controls.number.touched) && formPlayerNumber.controls.number.errors }">
+        </div>
+        <button type="submit" class="btn btn-ultraviolet mb-2" [disabled]="!formPlayerNumber.valid || gameStart">Подтвердить</button>
+      </form>
+    </div>
+  </div>
+  <div class="row pt-5" *ngIf="gameStart">
+    <div class="col-sm-12">
+    <form class="form-inline justify-content-center" [formGroup]="formResultNumber" (ngSubmit)="onCheckNumber()">
+      <div class="form-group mx-sm-2 mb-2">
+        <label class="sr-only">Угадано</label>
+        <input type="number" class="form-control" formControlName="col" [min]="0" [max]="4"
+               [ngClass]="{ 'is-invalid': (formResultNumber.controls.col.dirty
+               || formResultNumber.controls.col.touched) && formResultNumber.controls.col.errors }">
+      </div>
+      <div class="form-group mx-sm-2 mb-2">
+        <label class="sr-only">Совпадений</label>
+        <input type="number" class="form-control" formControlName="state" [min]="0" [max]="4"
+               [ngClass]="{ 'is-invalid': (formResultNumber.controls.state.dirty
+               || formResultNumber.controls.state.touched) && formResultNumber.controls.state.errors }">
+      </div>
+      <button type="submit" class="btn btn-ultraviolet mb-2" [disabled]="!formPlayerNumber.valid">Подтвердить</button>
+    </form>
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="offset-sm-5 col-sm-2">
+      <ul class="list-group text-center">
+        <li class="list-group-item" *ngFor="let t of massVar; let i = index;">{{t.id}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

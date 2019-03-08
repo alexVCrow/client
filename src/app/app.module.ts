@@ -7,12 +7,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ListComponent } from './list/list.component';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListComponent
+    ListComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
