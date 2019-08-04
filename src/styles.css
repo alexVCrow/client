@@ -17,7 +17,7 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 .uneditable-input:focus {
   border-color: darkorchid;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 7px darkviolet;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px darkviolet;
   outline: 0 none;
 }
 
@@ -27,13 +27,13 @@ input[type="number"]:focus,
 
 .btn-ultraviolet {
   background-color: darkorchid !important;
-  color: white;
-  border-color: darkorchid;
+  color: white !important;
+  border-color: darkorchid !important;
 }
 .btn-ultraviolet:hover, .btn-ultraviolet:active, .btn-ultraviolet:visited, .btn-ultraviolet:focus {
   background-color: darkviolet !important;
   color: white;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 7px darkorchid;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px darkorchid;
   outline: 0 none;
 }
 .btn-ultraviolet:disabled{
@@ -45,6 +45,28 @@ input[type="number"]:focus,
 .btn-ultraviolet:disabled:hover{
   color: white;
 }
+
+.btn-greenyellow {
+  background-color: seagreen !important;
+  color: white !important;
+  border-color: seagreen !important;
+}
+.btn-greenyellow:hover, .btn-greenyellow:active, .btn-greenyellow:visited, .btn-greenyellow:focus {
+  background-color: seagreen !important;
+  color: white;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px seagreen;
+  outline: 0 none;
+}
+.btn-greenyellow:disabled{
+  box-shadow: none;
+  color: white;
+  background-color: seagreen !important;
+  opacity: .35;
+}
+.btn-greenyellow:disabled:hover{
+  color: white;
+}
+
 .form-control.is-invalid{
   border-color: #FF6F61 !important;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 7px #FF6F61 !important;

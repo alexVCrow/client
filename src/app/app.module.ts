@@ -8,13 +8,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { StartComponent } from './start/start.component';
+import { UtilsComponent } from './utils/utils.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ListComponent,
-    StartComponent
+    StartComponent,
+    UtilsComponent
   ],
   imports: [
     BrowserModule,

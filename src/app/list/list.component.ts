@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-list',
@@ -7,25 +8,16 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  listRows: [];
+  findForm: FormGroup;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8080/list').subscribe((data: any) => {
-      console.log(data);
-      this.listRows = data;
+    this.findForm = this.fb.group({
+      client: [null, Validators.required]
     });
   }
 
-  trackByFn(index) {
-    return index;
-  }
-
-  delete(row: any, index: number): void {
-    this.http.post('http://localhost:8080/delete', row).subscribe((data: any) => {
-      this.listRows.splice(index, 1);
-    });
-  }
+  onSubmit(){}
 
 }
